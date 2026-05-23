@@ -531,6 +531,9 @@ form button {
     .modal-next {
         right: 5px;
     }
+    .hero-content .btn-primary {
+    margin-top: 30px;
+}
 
     .modal-counter {
         bottom: -35px;
