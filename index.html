@@ -84,19 +84,8 @@
         <div class="container">
             <h2>Galería</h2>
             <p class="galeria-subtitle">Fotos del apartamento DomaraVera</p>
-            <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal(0)">
-                    <img src="images/1.jpg" alt="Vista general del apartamento DomaraVera">
-                </div>
-                <div class="gallery-item placeholder">
-                    <span>Foto 2</span>
-                </div>
-                <div class="gallery-item placeholder">
-                    <span>Foto 3</span>
-                </div>
-                <div class="gallery-item placeholder">
-                    <span>Foto 4</span>
-                </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Las imágenes se generarán con JavaScript -->
             </div>
         </div>
     </section>
@@ -163,13 +152,88 @@
     <script>
         // Array de imágenes disponibles en la galería
         const galleryImages = [
-            {
-                src: 'images/1.jpg',
-                alt: 'Vista general del apartamento DomaraVera'
-            }
+            { src: 'images/1.jpg', alt: 'Foto 1 del apartamento DomaraVera' },
+            { src: 'images/2.jpg', alt: 'Foto 2 del apartamento DomaraVera' },
+            { src: 'images/3.jpg', alt: 'Foto 3 del apartamento DomaraVera' },
+            { src: 'images/4.jpg', alt: 'Foto 4 del apartamento DomaraVera' },
+            { src: 'images/5.jpg', alt: 'Foto 5 del apartamento DomaraVera' },
+            { src: 'images/5.2.jpg', alt: 'Foto 5.2 del apartamento DomaraVera' },
+            { src: 'images/6.jpg', alt: 'Foto 6 del apartamento DomaraVera' },
+            { src: 'images/7.jpg', alt: 'Foto 7 del apartamento DomaraVera' },
+            { src: 'images/8.jpg', alt: 'Foto 8 del apartamento DomaraVera' },
+            { src: 'images/9.jpg', alt: 'Foto 9 del apartamento DomaraVera' },
+            { src: 'images/10.jpg', alt: 'Foto 10 del apartamento DomaraVera' },
+            { src: 'images/11.jpg', alt: 'Foto 11 del apartamento DomaraVera' },
+            { src: 'images/12.jpg', alt: 'Foto 12 del apartamento DomaraVera' },
+            { src: 'images/13.jpg', alt: 'Foto 13 del apartamento DomaraVera' },
+            { src: 'images/14.jpg', alt: 'Foto 14 del apartamento DomaraVera' },
+            { src: 'images/15.jpg', alt: 'Foto 15 del apartamento DomaraVera' },
+            { src: 'images/16.jpg', alt: 'Foto 16 del apartamento DomaraVera' },
+            { src: 'images/17.jpg', alt: 'Foto 17 del apartamento DomaraVera' },
+            { src: 'images/18.jpg', alt: 'Foto 18 del apartamento DomaraVera' },
+            { src: 'images/19.jpg', alt: 'Foto 19 del apartamento DomaraVera' },
+            { src: 'images/20.jpg', alt: 'Foto 20 del apartamento DomaraVera' },
+            { src: 'images/21.jpg', alt: 'Foto 21 del apartamento DomaraVera' },
+            { src: 'images/22.jpg', alt: 'Foto 22 del apartamento DomaraVera' },
+            { src: 'images/23.jpg', alt: 'Foto 23 del apartamento DomaraVera' },
+            { src: 'images/24.jpg', alt: 'Foto 24 del apartamento DomaraVera' },
+            { src: 'images/24.2.JPG', alt: 'Foto 24.2 del apartamento DomaraVera' },
+            { src: 'images/25.jpg', alt: 'Foto 25 del apartamento DomaraVera' },
+            { src: 'images/26.jpg', alt: 'Foto 26 del apartamento DomaraVera' },
+            { src: 'images/27.jpg', alt: 'Foto 27 del apartamento DomaraVera' },
+            { src: 'images/28.JPG', alt: 'Foto 28 del apartamento DomaraVera' },
+            { src: 'images/29.JPG', alt: 'Foto 29 del apartamento DomaraVera' },
+            { src: 'images/30.JPG', alt: 'Foto 30 del apartamento DomaraVera' },
+            { src: 'images/31.JPG', alt: 'Foto 31 del apartamento DomaraVera' },
+            { src: 'images/32.JPG', alt: 'Foto 32 del apartamento DomaraVera' },
+            { src: 'images/33.JPG', alt: 'Foto 33 del apartamento DomaraVera' },
+            { src: 'images/34.JPG', alt: 'Foto 34 del apartamento DomaraVera' },
+            { src: 'images/35.jpg', alt: 'Foto 35 del apartamento DomaraVera' },
+            { src: 'images/1715532289678.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532289732.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532895240.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532895255.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532895276.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532895322.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532895363.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715532895378.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004363.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004376.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004408.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004427.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004462.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004495.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004509.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004552.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533004578.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533105470.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533105493.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533105507.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/1715533105533.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/2122222.jpg', alt: 'Foto del apartamento DomaraVera' },
+            { src: 'images/2466666.jpg', alt: 'Foto del apartamento DomaraVera' }
         ];
 
         let currentImageIndex = 0;
+
+        // Función para generar la galería
+        function generateGallery() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            galleryGrid.innerHTML = '';
+
+            galleryImages.forEach((image, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.onclick = () => openModal(index);
+
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.alt;
+
+                galleryItem.appendChild(img);
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
 
         // Función para abrir el modal con una imagen específica
         function openModal(index) {
@@ -246,8 +310,11 @@
             }
         });
 
-        // Inicializar contador
-        updateImageCounter();
+        // Generar galería al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            generateGallery();
+            updateImageCounter();
+        });
     </script>
 </body>
 </html>
