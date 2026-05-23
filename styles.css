@@ -109,6 +109,11 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.hero-content .btn-primary {
+    margin-top: 25px;
+}
+
+
 /* Info Principal */
 .info-principal {
     padding: 60px 20px;
