@@ -131,14 +131,23 @@
                 </div>
                 <div class="contacto-mensaje">
                     <h3>Envíanos un mensaje</h3>
+                    
                     <form action="https://formsubmit.co/marandaillas@gmail.com" method="POST">
+
                         <input type="hidden" name="_subject" value="Nueva solicitud de reserva - DomaraVera">
                         <input type="hidden" name="_captcha" value="false">
+                    
+                        <!-- URL correcta de retorno -->
+                        <input type="hidden" name="_next" value="https://domaravera.github.io/domaravera-web/">
+                    
                         <input type="text" name="nombre" placeholder="Tu nombre" required>
                         <input type="email" name="email" placeholder="Tu email" required>
+                    
                         <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+                    
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
+
 
                 </div>
             </div>
