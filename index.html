@@ -131,12 +131,15 @@
                 </div>
                 <div class="contacto-mensaje">
                     <h3>Envíanos un mensaje</h3>
-                    <form>
-                        <input type="text" placeholder="Tu nombre" required>
-                        <input type="email" placeholder="Tu email" required>
-                        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    <form action="https://formsubmit.co/marandaillas@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nueva solicitud de reserva - DomaraVera">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        <input type="email" name="email" placeholder="Tu email" required>
+                        <textarea name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
+
                 </div>
             </div>
         </div>
