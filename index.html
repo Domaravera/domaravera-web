@@ -85,7 +85,7 @@
             <h2>Galería</h2>
             <p class="galeria-subtitle">Fotos del apartamento DomaraVera</p>
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openModal(this)">
+                <div class="gallery-item" onclick="openModal(0)">
                     <img src="images/1.jpg" alt="Vista general del apartamento DomaraVera">
                 </div>
                 <div class="gallery-item placeholder">
@@ -105,7 +105,12 @@
     <div id="imageModal" class="modal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal()">&times;</span>
+            <button class="modal-nav modal-prev" onclick="previousImage()">&lt;</button>
             <img id="modalImage" src="" alt="Imagen ampliada">
+            <button class="modal-nav modal-next" onclick="nextImage()">&gt;</button>
+            <div class="modal-counter">
+                <span id="imageCounter">1 / 1</span>
+            </div>
         </div>
     </div>
 
@@ -156,20 +161,32 @@
     </footer>
 
     <script>
-        // Funcionalidad del modal lightbox
-        function openModal(element) {
+        // Array de imágenes disponibles en la galería
+        const galleryImages = [
+            {
+                src: 'images/1.jpg',
+                alt: 'Vista general del apartamento DomaraVera'
+            }
+        ];
+
+        let currentImageIndex = 0;
+
+        // Función para abrir el modal con una imagen específica
+        function openModal(index) {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
-            const img = element.querySelector('img');
             
-            if (img) {
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
+            if (index >= 0 && index < galleryImages.length) {
+                currentImageIndex = index;
+                modalImage.src = galleryImages[index].src;
+                modalImage.alt = galleryImages[index].alt;
+                updateImageCounter();
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         }
 
+        // Función para cerrar el modal
         function closeModal(event) {
             const modal = document.getElementById('imageModal');
             
@@ -180,12 +197,57 @@
             }
         }
 
+        // Función para ir a la imagen siguiente
+        function nextImage() {
+            if (currentImageIndex < galleryImages.length - 1) {
+                openModal(currentImageIndex + 1);
+            }
+        }
+
+        // Función para ir a la imagen anterior
+        function previousImage() {
+            if (currentImageIndex > 0) {
+                openModal(currentImageIndex - 1);
+            }
+        }
+
+        // Función para actualizar el contador de imágenes
+        function updateImageCounter() {
+            const counter = document.getElementById('imageCounter');
+            counter.textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
+            
+            // Desabilitar/habilitar botones de navegación
+            const prevBtn = document.querySelector('.modal-prev');
+            const nextBtn = document.querySelector('.modal-next');
+            
+            prevBtn.disabled = currentImageIndex === 0;
+            nextBtn.disabled = currentImageIndex === galleryImages.length - 1;
+            
+            prevBtn.style.opacity = currentImageIndex === 0 ? '0.5' : '1';
+            nextBtn.style.opacity = currentImageIndex === galleryImages.length - 1 ? '0.5' : '1';
+        }
+
         // Cerrar modal con tecla Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
         });
+
+        // Navegación con teclas de flecha
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (modal.classList.contains('active')) {
+                if (event.key === 'ArrowRight') {
+                    nextImage();
+                } else if (event.key === 'ArrowLeft') {
+                    previousImage();
+                }
+            }
+        });
+
+        // Inicializar contador
+        updateImageCounter();
     </script>
 </body>
 </html>
