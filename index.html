@@ -85,7 +85,7 @@
             <h2>Galería</h2>
             <p class="galeria-subtitle">Fotos del apartamento DomaraVera</p>
             <div class="gallery-grid">
-                <div class="gallery-item">
+                <div class="gallery-item" onclick="openModal(this)">
                     <img src="images/1.jpg" alt="Vista general del apartamento DomaraVera">
                 </div>
                 <div class="gallery-item placeholder">
@@ -100,6 +100,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal para ampliar imagen -->
+    <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Imagen ampliada">
+        </div>
+    </div>
 
     <!-- Ubicación -->
     <section id="ubicacion" class="ubicacion">
@@ -146,5 +154,38 @@
             <p>&copy; 2026 Apartamento DomaraVera. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Funcionalidad del modal lightbox
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const img = element.querySelector('img');
+            
+            if (img) {
+                modalImage.src = img.src;
+                modalImage.alt = img.alt;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(event) {
+            const modal = document.getElementById('imageModal');
+            
+            // Si es click en la X o en el fondo del modal
+            if (!event || event.target === modal || event.target.classList.contains('modal-close')) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
