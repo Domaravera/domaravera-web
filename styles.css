@@ -545,5 +545,16 @@ form button {
     text-align: center;
     margin: 40px 0;
 }
+/* --- Award Booking.com --- */
+.award-card {
+    text-align: center;
+}
+
+.award-card .award-img {
+    width: 90px;          /* Tamaño perfecto para encajar en la tarjeta */
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    object-fit: contain;
+}
 
 
