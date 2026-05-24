@@ -1,3 +1,6 @@
+html {
+    scroll-padding-top: 80px; /* Ajusta si tu navbar mide más o menos */
+}
 * {
     margin: 0;
     padding: 0;
