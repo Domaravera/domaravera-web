@@ -550,11 +550,4 @@ form button {
     text-align: center;
 }
 
-.award-card .award-img {
-    width: 60px;          /* Tamaño perfecto para encajar en la tarjeta */
-    margin-bottom: 0.8rem;
-    border-radius: 6px;
-    object-fit: contain;
-}
-
 
