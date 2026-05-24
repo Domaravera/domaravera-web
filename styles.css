@@ -58,7 +58,7 @@ body {
 }
 
 .nav-award {
-    height: 40px;          /* Ajusta según la altura de tu navbar */
+    height: 60px;          /* Ajusta según la altura de tu navbar */
     margin-left: 20px;
     border-radius: 6px;
     object-fit: contain;
