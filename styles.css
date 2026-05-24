@@ -551,9 +551,9 @@ form button {
 }
 
 .award-card .award-img {
-    width: 90px;          /* Tamaño perfecto para encajar en la tarjeta */
-    margin-bottom: 1rem;
-    border-radius: 8px;
+    width: 60px;          /* Tamaño perfecto para encajar en la tarjeta */
+    margin-bottom: 0.8rem;
+    border-radius: 6px;
     object-fit: contain;
 }
 
