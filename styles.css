@@ -57,13 +57,6 @@ body {
     opacity: 0.8;
 }
 
-.nav-award {
-    height: 60px;          /* Ajusta según la altura de tu navbar */
-    margin-left: 20px;
-    border-radius: 6px;
-    object-fit: contain;
-}
-
 /* Hero Section */
 .hero {
     position: relative;
