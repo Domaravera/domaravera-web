@@ -547,7 +547,7 @@ form button {
 }
 
 .award-card {
-    background-color: #0d6efd; /* azul estilo Domaravera */
-    color: white; /* texto blanco para contraste */
-    margin-top: -20px; /* súbela para que no se monte con las inferiores */
+    background-color: #0d6efd; /* azul */
+    color: white; /* texto blanco */
+    margin-top: -20px; /* súbela un poco */
 }
