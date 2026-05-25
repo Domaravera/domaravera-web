@@ -547,7 +547,25 @@ form button {
 }
 
 .award-card {
-    background-color: #0d6efd; /* azul */
+    background-color: #0d6efd;
     color: white; /* texto blanco */
-    margin-top: -20px; /* súbela un poco */
+    margin-top: -20px;
+}
+
+/* Icono blanco */
+.award-card .feature-icon {
+    color: white;
+}
+
+/* Título blanco */
+.award-card h3 {
+    color: white;
+}
+
+/* Párrafo blanco */
+.award-card p {
+    color: white;
+}
+.award-card .feature-icon {
+    font-size: 3.5rem;
 }
