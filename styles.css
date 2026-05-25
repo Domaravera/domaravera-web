@@ -548,9 +548,11 @@ form button {
 
 .award-card {
     background-color: #0d6efd;
-    color: white; /* texto blanco */
-    margin-top: -20px;
+    color: white;
+    border-radius: 10px;
+    transform: translateY(-20px); /* súbela 20px */
 }
+
 
 /* Icono blanco */
 .award-card .feature-icon {
@@ -569,3 +571,4 @@ form button {
 .award-card .feature-icon {
     font-size: 3.5rem;
 }
+
