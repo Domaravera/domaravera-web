@@ -547,8 +547,8 @@ form button {
 }
 
 .cartulina {
-    width: 350px;
-    height: 500px;
+    width: 500px;
+    height: 300px;
     background-image: url("images/award-booking-2026.png");
     background-size: cover; /* o contain */
     background-position: center;
