@@ -546,13 +546,3 @@ form button {
     margin: 40px 0;
 }
 
-.cartulina-award {
-    width: 350px;
-    height: 500px;
-    background-image: url("../images/award-booking-2026.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 15px; /* si quieres igual que las otras */
-    padding: 20px; /* opcional si quieres meter texto encima */
-}
