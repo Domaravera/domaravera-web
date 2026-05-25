@@ -546,17 +546,18 @@ form button {
     margin: 40px 0;
 }
 
+/* Cartulina azul del award */
 .award-card {
-    background-color: #0d6efd;
-    color: white;
+    background-color: #0d6efd; /* azul */
+    color: white; /* texto blanco */
     border-radius: 10px;
-    transform: translateY(-20px); /* súbela 20px */
+    transform: translateY(-20px); /* súbela un poco */
 }
 
-
-/* Icono blanco */
+/* Icono blanco y grande */
 .award-card .feature-icon {
     color: white;
+    font-size: 3.5rem;
 }
 
 /* Título blanco */
@@ -568,7 +569,3 @@ form button {
 .award-card p {
     color: white;
 }
-.award-card .feature-icon {
-    font-size: 3.5rem;
-}
-
